@@ -1,6 +1,8 @@
 package br.com.supermecado.teste;
 
+import br.com.suoermercado.dao.EntradaProdutoDao;
 import br.com.suoermercado.dao.FuncionarioDao;
+import br.com.supermercado.model.EntradaProduto;
 import br.com.supermercado.model.Funcionario;
 
 public class Teste {
@@ -29,6 +31,19 @@ public class Teste {
 		funD.inserir(fun);
 		funD.inserir(fun1);
 		funD.inserir(fun2);
+		
+		EntradaProduto entra = new EntradaProduto();
+		entra.setCodigo(0);
+		entra.setNomeMercadoria("feijao");
+		entra.setQuantidade(10);
+		entra.setValor(50);
+		
+		EntradaProdutoDao entradao = new EntradaProdutoDao();
+		entradao.inserir(entra);
+		
+		
+		
+		
 
 	}
 
