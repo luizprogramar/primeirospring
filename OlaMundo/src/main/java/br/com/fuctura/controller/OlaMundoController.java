@@ -15,25 +15,29 @@ public class OlaMundoController {
 	
 	@Autowired
 	JogadorRepository repository;
-	
+
 	//
 	@GetMapping("/inicial")
 	public String getInicial(Model model) {
 		
-		  Optional<Jogador> jogador = repository.findById(1L);
+		Optional<Jogador> jogador = repository.findById(1L);
 		  
-		  if(jogador.isPresent()) {
+		   if(jogador.isPresent()) {
 			  model.addAttribute("jogador",jogador.get());
 		  }
+		
 			  
-		  model.addAttribute("tituloDaPagina", " ABC");
+		 
+		model.addAttribute("jogador", "");
+		  model.addAttribute("tituloDaPagina", " lista de jogadores");  
 		
 		return "inicial";
 		
 	}
 	
+	
 	//localhost:9080/outra
-	/*@GetMapping("/outra")
+	@GetMapping("/outra")
 	public String fuctura() {
 		return "outraPagina";
 	}
@@ -56,16 +60,13 @@ public class OlaMundoController {
 	@GetMapping("/excluir")
 	public String excluir() {
 		return "excluir";
-	}*/
+	}
+	
+	@GetMapping("/jogador")
+	public String jogador() {
+		return "jogador";
+	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		
 }
